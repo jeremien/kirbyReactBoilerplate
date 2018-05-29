@@ -11,7 +11,7 @@ class DataFetch extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost/www/kirby-react/portfolio`)
+    fetch(`${this.props.url}/portfolio`)
       .then(res => res.json())
       .then((result) => {
         console.log(result)
