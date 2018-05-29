@@ -1,0 +1,23 @@
+title: Porfolio
+
+files: false
+
+pages:
+  template: article
+  sort: flip
+  num: date
+
+options:
+  template: false
+  status: false
+
+fields:
+  title:
+    label: Title
+    type: title
+    required: true
+    width: 3/4
+
+  text:
+    label: Text
+    type: textarea
