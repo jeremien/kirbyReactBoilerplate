@@ -16,7 +16,7 @@ fields:
     icon: calendar
     label: Date
     type: date
-    format: LL
+    format: DD-MM-YYYY
     placeholder: Select a date…
     default: today
     required: true
@@ -25,3 +25,14 @@ fields:
   text:
     label: Text
     type: textarea
+
+  tags:
+    label: Tags
+    type: tags
+    lower: true
+
+files:
+  fields:
+    caption:
+      label: Caption
+      type: textarea

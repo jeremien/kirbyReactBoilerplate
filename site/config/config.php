@@ -28,3 +28,32 @@ make Kirby work. For more fine-grained configuration
 of the system, please check out http://getkirby.com/docs/advanced/options
 
 */
+
+// css 
+// c::set('css.handler', function($href, $media = null) {
+
+// });
+
+// optimise images on upload
+kirby()->hook(['panel.file.upload', 'panel.file.replace'], function($file) {
+
+// set a max. dimension
+  $maxDimension = 1000;
+  try {
+    // check file type and dimensions
+    if ($file->type() == 'image' and ($file->width() > $maxDimension or $file->height() > $maxDimension)) {
+
+      // get the original file path
+      $originalPath = $file->dir() . '/' . $file->filename();
+      // create a thumb and get its path
+      $resizedImage = $file->resize($maxDimension, $maxDimension);
+      $resizedPath = $resizedImage->dir() . '/' . $resizedImage->filename();
+      // replace the original image with the resized one
+      copy($resizedPath, $originalPath);
+      unlink($resizedPath);
+      }
+  } catch (Exception $e) {
+      return response::error($e->getMessage());
+  }
+
+});

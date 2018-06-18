@@ -17,7 +17,3 @@ fields:
     type: title
     required: true
     width: 3/4
-
-  text:
-    label: Text
-    type: textarea
