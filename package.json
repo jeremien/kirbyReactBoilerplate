@@ -24,7 +24,7 @@
     "lodash": "^4.17.10",
     "marked": "^0.4.0",
     "moment": "^2.22.2",
-    "node-sass": "4.5.3",
+    "node-sass": "7.0.0",
     "normalize.css": "^8.0.0",
     "react": "16.0.0",
     "react-data-sort": "^1.1.0",
